@@ -1,0 +1,42 @@
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <title>jQuery UI Draggable + Sortable</title>
+  <link rel="stylesheet" type="text/css" href="css/jquery/jquery-ui.css">
+  <script type="text/javascript" src="js/lib/jquery-1.8.3.js"></script>
+  <script type="text/javascript" src="js/lib/jquery-ui-1.9.2.js"></script>
+  <style>
+  /******** FOR START BAR *********/
+/** START BUTTON **/
+img {
+		-webkit-transition: all .5s linear;
+}
+
+img:hover{
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+
+
+  </style>
+  <script>
+  $(function() {
+    $( "#sortStartBar" ).sortable({
+      revert: true
+    });
+  });
+  </script>
+</head>
+<body>
+ <img src="images/calculator.gif" />
+ <div id="load">
+ 	<script>
+    	$('#load').load('test2.html');
+    </script>
+ </div>
+</body>
+</html>

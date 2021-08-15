@@ -1,0 +1,119 @@
+<!--<html>
+<head>
+<title>canvas</title>
+	<script type="text/javascript" src="js/screensaver.js"></script>
+</head>
+
+<body>
+	<canvas id='screensaver' width='500' height='500'> </canvas>
+</body>
+</html>
+-->
+
+ <script>
+  var context;
+
+var balls = [];
+  // Create balls of Specific Color, Size and speeds 
+  function Ball(color,x,y, radius,dx,dy,mass)
+  {
+  this.canvas  = canvas;
+  this.context = canvas.getContext('2d');
+  this.radius  = radius;
+  this.x = x;
+  this.y  = y;
+  this.dx  = dx;
+  this.dy  = dy;
+  this.color   = color;
+  this.mass = mass;
+  }
+
+ Ball.prototype.Create = function ()
+ {
+	  this.context.beginPath();
+	  this.context.fillStyle = this.color;
+	  this.context.arc(this.x,this.y,this.radius,0,Math.PI*2,false);
+	  this.context.fill();
+   }
+  Ball.prototype.Bounce = function ()
+  {
+	  if (this.x >= (canvas.width - this.radius) || this.x <= this.radius) this.dx = -this.dx;
+	  if (this.y >= (canvas.height - this.radius) || this.y <= this.radius) this.dy = -this.dy;
+		this.x += this.dx;
+		this.y += this.dy; 
+  }
+  Ball.prototype.checkCollision = function ()
+  {
+	  var collisionPointX, collisionPointY;
+	  for (var n = 0; n < balls.length; n++) {
+				if (balls[n] != this) {
+					if (this.x + this.radius + balls[n].radius > balls[n].x 
+					&& this.x < balls[n].x + this.radius + balls[n].radius
+					&& this.y + this.radius + balls[n].radius > balls[n].y 
+					&& this.y < balls[n].y + this.radius + balls[n].radius) {
+						if (distanceTo(this, balls[n]) < this.radius + balls[n].radius) {
+							/*collisionPointX = 
+								 ((this.x * balls[n].radius) + (balls[n].x * this.radius)) 
+								 / (this.radius + balls[n].radius);
+								
+							collisionPointY = 
+								 ((this.y * balls[n].radius) + (balls[n].y * this.radius)) 
+								 / (this.radius + balls[n].radius);*/
+							var newVelX1 = (this.dx*(this.mass-balls[n].mass)+(2*balls[n].mass * balls[n].dx))/(this.mass + balls[n].mass);
+							var newVelY1 = (this.dy*(this.mass-balls[n].mass)+(2*balls[n].mass * balls[n].dy))/(this.mass + balls[n].mass);
+							var newVelX2 = (balls[n].dx * (balls[n].mass-this.mass) + (2 * this.mass * this.dx)) / (this.mass + balls[n].mass);
+							var newVelY2 = (balls[n].dy * (balls[n].mass-this.mass) + (2 * this.mass * this.dy)) / (this.mass + balls[n].mass);
+							//console.log("collision"+" "+collisionPointX+" "+collisionPointY);
+							this.dx = newVelX1;
+							this.dy = newVelY1;
+							balls[n].dx = newVelX2;
+							balls[n].dy = newVelY2;
+							
+							this.x = this.x + newVelX1;
+							this.y = this.y + newVelY1;
+							balls[n].x = balls[n].x + newVelX2;
+							balls[n].y = balls[n].y + newVelY2;
+						}
+					}
+				}
+			}
+  }
+  
+ function distanceTo(firstBall, secondBall){
+	 var distance = Math.sqrt(Math.pow((firstBall.x-secondBall.x),2)+Math.pow((firstBall.y-secondBall.y),2));
+	 return distance;
+ }
+ 
+function init()
+{
+	canvas  = document.getElementById("myCanvas")
+	context = canvas.getContext('2d');
+	// Create an arry to store the balls info
+	balls.push(new Ball('#ff0000',100,100, 30,5,3,20)); 
+	balls.push(new Ball('#ff6600', 50,50, 20,2,10,20));
+	balls.push(new Ball('#ff0000',150,110, 10,7,3,20)); 
+	/*balls.push(new Ball('#ff6600', 50,50, 20,2,10,20));
+	balls.push(new Ball('#ff0000',100,100, 30,5,3,20)); 
+	balls.push(new Ball('#ff6600', 50,50, 20,2,10,20));
+	balls.push(new Ball('#009900', 10,3,4));
+	balls.push(new Ball('#009900', 25,5,4));
+	balls.push(new Ball('#009900', 40,3,6));*/
+	setInterval(draw,20);
+
+}
+function draw(){
+	context.clearRect(0,0, 500,350);
+	
+	for (i in balls) {
+		// Boundary checking
+		balls[i].checkCollision();
+		balls[i].Bounce();
+		balls[i].Create();
+	}
+}
+  </script>
+  </head>
+  <body onLoad="init();">
+ <canvas id="myCanvas" width="500" height="300"></canvas> 
+
+  </body>

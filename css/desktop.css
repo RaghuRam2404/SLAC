@@ -1,0 +1,142 @@
+.desktopApp{
+	width: 55px;
+	height: 55px;/*
+	display: block;
+	display: inline-block;
+	position: relative;*/
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	cursor: pointer;
+	border: 1px transparent solid;
+	border-radius: 7px;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+	z-index: 1;
+}
+
+#expContent .explorerApp{
+	margin: 5px;
+	padding: 5px;
+	height: 100px;
+	width: 100px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+#expContent .explorerApp img{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	margin: 0px auto;
+}
+#expContent .explorerApp div#link{
+	display: -webkit-box;
+	-webkit-box-pack: center;
+	display: -moz-box;
+	-moz-box-pack: center;
+	display: -o-box;
+	-o-box-pack: center;
+	margin: 0px auto;
+}
+#expContent .explorerApp:hover{
+	padding: 5px;
+	border: 1px solid #360;
+}
+#expContent .explorerApp.active{
+	padding: 5px;
+	border: 1px solid #93C;
+}
+
+.desktopApp:hover{
+	border: 1px #000 solid;
+}
+
+#bounceWrapper{
+	border:#000 solid 1px;
+	display: none;
+	position: absolute;
+	right: 0%;
+	top: 0%;
+	background: #CCC;
+}
+
+#bouncyText{
+	margin: 10px auto;
+	width: 500px;
+	height: 75px;
+	max-height:150px;
+	font-size: 15px;
+	text-align: center;
+}
+#bouncyText div{
+	display: inline-block;
+	padding-right: 15px;
+	padding-left: 10px;
+	width: 20px;
+	font-family: "Rockwell Extra Bold";
+	-webkit-animation: anime .8s infinite alternate;	
+	-o-animation: anime .8s infinite alternate;
+	-moz-animation: anime .8s infinite alternate;
+	margin-top: 45px;
+}/*
+#bouncyText div:nth-child(1){ color: #906; }
+#bouncyText div:nth-child(2){ color: #099; }
+#bouncyText div:nth-child(3){ color: #399; }
+#bouncyText div:nth-child(4){ color: #663; }
+#bouncyText div:nth-child(5){ color: #F93; }
+#bouncyText div:nth-child(6){ color: #CF9; }
+#bouncyText div:nth-child(7){ color: #0F9; }*/
+#bounceWrapper span{
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	display: block;
+	color: #F30;
+	text-shadow: 2px 2px 5px #036;
+	position: relative;
+	text-align: center;
+	padding-bottom: 15px;
+	letter-spacing: 7px;
+}
+@-webkit-keyframes anime{
+	0%{
+		width: 35px;
+		margin-top: 25px;
+		font-size:28px;
+		font-weight:3000;
+	}
+	100%{
+		color: #900;
+		width: 20px;
+		margin-top: 45px;
+	}
+}
+@-moz-keyframes anime{
+	0%{
+		width: 45px;
+		margin-top: 25px;
+		font-size:24px;
+		font-weight:bold;
+	}
+	100%{
+		color: #900;
+		width: 20px;
+		margin-top: 45px;
+	}
+}
+@-o-keyframes anime{
+	0%{
+		width: 45px;
+		margin-top: 25px;
+		font-size:24px;
+		font-weight:bold;
+	}
+	100%{
+		color: #900;
+		width: 20px;
+		margin-top: 45px;
+	}
+}

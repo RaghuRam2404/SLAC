@@ -1,0 +1,117 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
+#start{
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+}
+
+#login{
+	background-color: #630;
+	background:url(../images/Wp-floral-blue.jpg) 100%;
+	width: 100%;
+	height: auto;
+	display: block;
+	position: relative;
+}
+
+#windows{
+	width: 100%;
+	height: auto;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+}
+
+/****** FOR LOGIN FORM *****/
+#login #loginForm{
+	width:550px;
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 170px;
+}
+
+#loginForm form{
+	display: block;
+	position: relative;
+	width: 500px;
+	height: 400px;
+}
+
+#loginForm table{
+	float: right;
+}
+
+#loginForm img{
+	float: left;
+}
+
+#loginForm form input[type="text"], #loginForm form input[type="password"]{
+	outline: none;
+	padding: 3px 5px;
+	font-family:Verdana, Geneva, sans-serif;
+	color:#033;
+	width: 250px;
+}
+
+#loginForm .error{
+	font-family: Verdana, Geneva, sans-serif;
+	color: #F00; 
+	width: 200px;
+	height: 200px;
+	font-size: 12px;
+	display: none;
+}
+
+#loginForm form input[type="submit"]{
+	float: right;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	border: 1px solid #000;
+	background-color:#999;
+	padding: 3px 5px;
+}
+
+/*****  FOR LOGGED IN  ******/
+#backgroundCanvas{
+	display: block;
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	background-color:rgba(0, 0, 0, 0.45);
+}
+
+#startbar{
+	background-color:#09C;
+	height: 40px;
+	width: 100%;
+	-webkit-box-shadow:inset #333 0px 0px 10px;
+	-moz-box-shadow:inset #333 0px 0px 10px;
+	-0-box-shadow:inset #333 0px 0px 10px;
+	box-shadow:inset #333 0px 0px 10px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 77;
+	display: -webkit-box;
+	-webkit-box-flex: 0;
+}
+
+#desktop{
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+	width: 100%;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+	background: #BAC9EB;
+}

@@ -1,0 +1,150 @@
+/* CSS Document */
+
+body{
+	margin: 0px;
+	display: block;
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	z-index: 1;
+	background-color:#CCC;
+}
+
+#wrapper{
+	display: block;
+	background-color: #0CC;
+	position: absolute;
+}
+
+#explorer{
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	background-color: #396;
+	display: block;
+	position: relative;
+}
+
+#topCont{
+	display: block;
+	position: relative;
+	background-color:#363;
+	height: 40px;
+	width: 100%:
+}
+
+#topCont button{
+	display: block;
+	position: relative;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+#topCont button[disabled]{
+	background:#CCC;
+}
+#topCont button{
+	background:#fff;
+}
+
+#topCont #back{
+	display: block;
+	position: relative;
+	float: left;
+	padding: 10px 4px;
+}
+#topCont #front{
+	display: block;
+	position: relative;
+	float: left;
+	padding: 10px 4px;
+}
+#topCont #address{
+	display: block;
+	position: relative;
+	float: left;
+	width: 500px`;
+	border: 1px solid #000;
+	margin: 5px;
+	padding: 5px 4px;
+}
+#topCont #address #compimg{
+	display: block;
+	position: relative;
+	float: left;
+	border: 1px solid #000;
+	padding: 5px 4px;
+}
+#topCont #address #curraddress{
+	display: block;
+	position: relative;
+	padding-left: 10px;
+}
+
+#contents{
+	background-color:#CCC;
+	display: block;
+	height: 400px;
+	clear: both;
+	position: relative;
+}
+
+#sideContent{
+	width: 20%;
+	height: 100%;
+	background-color:#FFF;
+	display: block;
+	position: relative;
+	float: left;
+}
+
+#expContent{
+	display: block;
+	height: 100%;
+	width: 80%;
+	position: relative;
+	float: left;
+	background-color:#C96;
+	overflow: scroll;
+}
+
+#expContent .explorerApp{
+	margin: 5px;
+	padding: 5px;
+	height: 100px;
+	width: 100px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	float: left;
+	border: 1px solid transparent;
+	-webkit-transition: all .2s linear;
+	-moz-transition: all .2s linear;
+	-o-transition: all .2s linear;
+	transition: all .2s linear;
+}
+#expContent .explorerApp img{
+	display: block;
+	position: relative;
+	margin: 0px auto;
+}
+#expContent .explorerApp div#link{
+	display: block;
+	position: relative;
+	margin: 0px auto;
+}
+#expContent .explorerApp:hover{
+	padding: 5px;
+	border: 1px solid #360;
+}
+#expContent .explorerApp.active{
+	padding: 5px;
+	border: 1px solid #93C;
+}
+
+#footer{
+	height: 100px;
+	display: block;
+	position: relative;
+}

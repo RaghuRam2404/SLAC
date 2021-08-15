@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>HTML 5 Game</title>
+	<style type="text/css">
+		#can{
+			width: 800px;
+			height: 500px;
+			display: block;
+			position: relative;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		#canvasBg, #canvasJet, #canvasEnemy{
+			width: 100%;
+			height: 100%;
+			display: block;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		#playerScore{
+			display: block;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+	</style>
+</head>
+	<body bgcolor='#ccc'>
+
+		<div id='can'>
+			<canvas id='canvasBg' width='800px' height='500px' style='background: white;'> </canvas>
+			<canvas id='canvasJet' width='800px' height='500px'> </canvas>
+			<canvas id='canvasEnemy' width='800px' height='500px'> 	</canvas>
+			<canvas id='playerScore' width='200px' height='70px' ></canvas>
+		</div>
+		<script type="text/javascript" src='js/apps/game1.js'></script>
+
+	</body>
+</html>
